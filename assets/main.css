@@ -1,0 +1,109 @@
+*,html{
+    padding:0;
+    margin:0
+}
+:root{
+--Blue: hsl(246, 80%, 60%);
+--Light-red: hsl(15, 100%, 70%);
+--Soft-blue: hsl(195, 74%, 62%);
+--Light-red: hsl(348, 100%, 68%);
+--Lime-green: hsl(145, 58%, 55%);
+--Violet: hsl(264, 64%, 52%);
+--Soft-orange: hsl(43, 84%, 65%);
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body{
+    background-color:var(--Very-dark-blue);
+    padding: 50px 20px
+}
+ul {
+    list-style:none
+}
+
+/* general styles */
+.main-user-info,.filters,.activity-info{
+    padding:25px;
+}
+.main-user-info-wrapper,.activity-info{
+    box-sizing:border-box;
+    background-color:var(--Dark-blue);
+    width:100%;
+}
+.main-user-info-wrapper,.activity{
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.activity{
+    background-color:var(--Light-red)
+}
+.activity-icon{
+    margin-bottom:-15px
+}
+.main-user-info-wrapper,.activity,.activity-icon-container{
+    overflow: hidden;
+}
+.main-user-info{
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius:9px
+}
+
+.activity-icon{
+    width:50px;
+    float:right
+}
+.activity-info{
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px
+}
+.filters ul,.main-user-info {
+    display: flex;
+}
+.profile-pic-container{
+    margin-right:10px
+}
+.filters ul{
+    justify-content:space-between
+}
+.main-user-info{
+    align-items: center;
+}
+.dashboard{
+    display:grid;
+    grid-gap: 15px 0
+}
+/* activities */
+
+.profile-pic-container{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:2px solid white;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+}
+.profile-pic{
+    width:100%
+}
+.activity-icon-container{
+    padding:0 9px
+}
+.main-user-info{
+    background-color:var(--Blue)
+}
+.activity-header,.time-info{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.time-info{
+    margin-top:8px
+}
