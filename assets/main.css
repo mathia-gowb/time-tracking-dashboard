@@ -1,10 +1,14 @@
+/* main font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 *,html{
     padding:0;
-    margin:0
+    margin:0;
+    
 }
 :root{
 --Blue: hsl(246, 80%, 60%);
---Light-red: hsl(15, 100%, 70%);
+--Light-orange: hsl(15, 100%, 70%);
 --Soft-blue: hsl(195, 74%, 62%);
 --Light-red: hsl(348, 100%, 68%);
 --Lime-green: hsl(145, 58%, 55%);
@@ -14,17 +18,23 @@
 --Dark-blue: hsl(235, 46%, 20%);
 --Desaturated-blue: hsl(235, 45%, 61%);
 --Pale-Blue: hsl(236, 100%, 87%);
+--small-font:12px;
+--meidum-font:14px;
+--large-font:20px;
+--xxl-font:30px
 }
 
 body{
     background-color:var(--Very-dark-blue);
-    padding: 50px 20px
+    padding: 50px 20px;
+    font-family: 'Rubik', sans-serif;
 }
 ul {
     list-style:none
 }
 
 /* general styles */
+
 .main-user-info,.filters,.activity-info{
     padding:25px;
 }
@@ -40,27 +50,29 @@ ul {
     -ms-border-radius:10px;
     -o-border-radius:10px;
 }
-.activity{
-    background-color:var(--Light-red)
-}
-.activity-icon{
-    margin-bottom:-15px
-}
-.main-user-info-wrapper,.activity,.activity-icon-container{
+
+.main-user-info-wrapper,.activity-icon-container{
     overflow: hidden;
 }
+
+
 .main-user-info{
     border-bottom-left-radius: 9px;
     border-bottom-right-radius:9px
 }
-
-.activity-icon{
-    width:50px;
-    float:right
+.report-label{
+    font-size:var(--small-font)
 }
+.username{
+    font-size:var(--large-font)
+}
+
 .activity-info{
-    border-top-right-radius: 9px;
-    border-top-left-radius: 9px
+    border-radius:9px;
+    -webkit-border-radius:9px;
+    -moz-border-radius:9px;
+    -ms-border-radius:9px;
+    -o-border-radius:9px;
 }
 .filters ul,.main-user-info {
     display: flex;
@@ -69,6 +81,7 @@ ul {
     margin-right:10px
 }
 .filters ul{
+    font-size:var(--meidum-font);
     justify-content:space-between
 }
 .main-user-info{
@@ -78,8 +91,6 @@ ul {
     display:grid;
     grid-gap: 15px 0
 }
-/* activities */
-
 .profile-pic-container{
     width:50px;
     height:50px;
@@ -93,8 +104,45 @@ ul {
 .profile-pic{
     width:100%
 }
+
+/* activities */
+
+#activity-1{
+    background-color:var(--Light-orange)
+}
+#activity-2{
+    background-color: var(--Soft-blue)
+}
+#activity-3{
+    background-color: var(--Light-red)
+}
+#activity-4{
+    background-color:var(--Lime-green)
+}
+#activity-5{
+    background-color:var(--Violet)
+}
+#activity-6{
+    background-color:var(--Soft-orange)
+}
+.main-user-info p,.active-filter,.activity-name,.current{
+    color:var(--Pale-Blue)
+}
+.filters,.previous {
+    color:var(--Desaturated-blue)
+}
+.activity-name{
+    font-size:var(--meidum-font);
+}
 .activity-icon-container{
+    height:33px;
     padding:0 9px
+}
+.activity-icon-container .activity-icon{
+    object-fit: cover;
+    object-position: center;
+    width:53px;
+    float:right
 }
 .main-user-info{
     background-color:var(--Blue)
@@ -105,5 +153,85 @@ ul {
     align-items:center;
 }
 .time-info{
-    margin-top:8px
+    margin-top:8px;
+}
+.current{
+    font-size:var(--large-font)
+}
+.previous{
+    font-size:var(--small-font)
+}
+.activity,.activity-info,.main-user-info-wrapper{
+    display:flex;
+    flex-direction:column
+}
+.activity-info,.main-user-info{
+    flex:1;
+    justify-content: space-around;
+}
+.drag-object{
+    cursor: pointer;
+}
+/* medium to large screens sytling */
+@media (min-width:500px){
+    .username,.current{
+        font-size:var(--xxl-font)
+    }
+    .dashboard{
+        max-width:850px;
+        margin:auto;
+        grid-template: 1fr 1fr/ 1fr 1fr;
+        grid-gap: 20px
+    }
+    .main-user-info-wrapper{
+        grid-column: 1 / span 2
+    }
+    .time-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .current{
+        margin-top:15px;
+        margin-bottom:5px
+    }
+}
+@media (min-width:750px) and (max-width:900px){
+    .dashboard{
+        max-width:850px;
+        margin:auto;
+        grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+        grid-gap: 20px
+    }
+    .main-user-info-wrapper{
+        grid-column: 1/span 1;
+        grid-row: 1 / span 2
+    }
+    #activity-5{
+        grid-column: 2/span 1;
+    }
+}
+@media (min-width:750px){
+    .main-user-info,
+    .filters ul{
+        flex-direction: column;
+    }
+    .filters li{
+        margin-bottom:8px
+    }
+    .main-user-info{
+        align-items:flex-start;
+    }
+}
+@media (min-width:900px){
+    .dashboard{
+
+        grid-template: 1fr 1fr/ 1fr 1fr 1fr 1fr;
+
+    }
+
+
+    .main-user-info-wrapper{
+        grid-column: 1 ;
+        grid-row: 1 / span 2
+    }
 }
